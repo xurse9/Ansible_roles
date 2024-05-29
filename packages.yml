@@ -1,0 +1,8 @@
+---
+- name: Install pkgs
+  hosts: all
+  become: true
+  tasks:
+    - name: Install needed packages
+      ansible.builtin.import_role:
+        name: packages
