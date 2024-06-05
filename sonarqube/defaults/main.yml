@@ -1,0 +1,4 @@
+sonar_check_url: "http://192.168.44.44:9000"
+sonar_web_user: admin
+sonar_web_password: panda
+sonar_web_old_password: admin
