@@ -1,11 +1,18 @@
 ---
 - name: Install needed packages
   ansible.builtin.pip:
+    name: 
     - requests==2.31.0
     - docker<7.0
     - docker-compose
-- name: Clone master branch
+
+- name: Git checkout
   ansible.builtin.git:
     repo: '{{ git_repository }}'
     dest: '{{ deployment_path }}'
     version: '{{ git_branch }}'
+
+- name: Run docker compose up
+  community.docker.docker_compose:
+    project_src: "{{ deployment_path }}"
+    build: yes
