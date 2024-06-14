@@ -13,6 +13,6 @@
     version: '{{ git_branch }}'
 
 - name: Run docker compose up
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     project_src: "{{ deployment_path }}"
     build: yes
